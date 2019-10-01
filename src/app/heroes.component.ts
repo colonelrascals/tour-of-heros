@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
+import { HEROES } from './mock-heros';
 
 @Component({
- selector: 'my-heroes',
+ selector: 'app-my-heroes',
  template: `
    <h1>{{title}}</h1>
    <h2>My Heroes</h2>
@@ -15,7 +16,7 @@ import { HeroService } from './hero.service';
        <span class="badge">{{hero.id}}</span> {{hero.name}}
      </li>
    </ul>
-   <hero-detail [hero]="selectedHero"></hero-detail>
+   <app-hero-detail [hero]="selectedHero"></app-hero-detail>
  `,
  styles: [`
    .selected {
@@ -81,6 +82,7 @@ export class HeroesComponent implements OnInit {
 
  ngOnInit(): void {
    this.getHeroes();
+   this.selectedHero = HEROES[0];
  }
 
  onSelect(hero: Hero): void {
