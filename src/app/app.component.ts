@@ -3,10 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <h1>{{title}}</h1>
-    <my-heroes></my-heroes>
+    <h1>Tour of Heroes</h1>
+    <app-my-heroes></app-my-heroes>
     `
 })
-export class AppComponent {
-  title = 'Tour of Heroes'
-}
+
+export class AppComponent {}
